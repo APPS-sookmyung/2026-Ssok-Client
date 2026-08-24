@@ -3,11 +3,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 // 폰트 적용
-const pretendard = localFont({
-  src: "../../public/fonts/PretendardVariable.woff2",
+const suit = localFont({
+  src: "../../public/fonts/SUIT-Variable.woff2",
   display: "swap",
-  weight: "45 900",
-  variable: "--font-pretendard",
+  weight: "100 900",
+  variable: "--font-suit",
 });
 
 // 웹사이트 메타데이터
@@ -28,8 +28,8 @@ const RootLayout = async ({
 }) => {
   console.log("RootLayout", await params);
   return (
-    <html lang="ko" className={`${pretendard.variable}`}>
-      <body>{children}</body>
+    <html lang="ko" className={suit.variable}>
+      <body className="font-suit antialiased">{children}</body>
     </html>
   );
 };

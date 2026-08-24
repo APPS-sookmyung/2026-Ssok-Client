@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --font-suit: var(--font-suit), sans-serif;
+
   /* Primary Colours */
   --color-black: #141414;
   --color-white: #f9f9f9;
@@ -46,4 +48,65 @@
   --color-green-400: #63b068;
   --color-green-700: #247e5a;
   --color-green-900: #00444d;
+}
+
+/* Typography */
+@layer utilities {
+  /* Display */
+  @utility text-display-lg {
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: -2%;
+  }
+  @utility text-display-md {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -2%;
+  }
+  @utility text-display-sm {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -2%;
+  }
+
+  /* Headings */
+  @utility text-heading-lg {
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -2%;
+  }
+  @utility text-heading-sm {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -2%;
+  }
+
+  /* Body */
+  @utility text-body-lg {
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -2%;
+  }
+  @utility text-body-md {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -2%;
+  }
+  @utility text-body-sm {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -2%;
+  }
+
+  /* Caption */
+  @utility text-caption-lg {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -2%;
+  }
+  @utility text-caption-sm {
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -2%;
+  }
 }
