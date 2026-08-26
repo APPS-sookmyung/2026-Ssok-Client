@@ -19,19 +19,14 @@ export const metadata: Metadata = {
   },
 };
 
-const RootLayout = async ({
-  params,
+export default function RootLayout({
   children,
 }: {
-  params: Promise<any>;
   children: React.ReactNode;
-}) => {
-  console.log("RootLayout", await params);
+}) {
   return (
     <html lang="ko" className={suit.variable}>
       <body className="font-suit antialiased">{children}</body>
     </html>
   );
-};
-
-export default RootLayout;
+}
