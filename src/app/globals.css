@@ -30,24 +30,24 @@
   --color-primary-900: #331400;
 
   /* Supporting Colours */
-  --color-red-50: #fef2f2;
-  --color-red-100: #fee2e2;
-  --color-red-400: #fca5a5;
-  --color-red-600: #dc2626;
-  --color-red-700: #b70808;
-  --color-red-800: #991b1b;
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-400: #fca5a5;
+  --color-error-600: #dc2626;
+  --color-error-700: #b70808;
+  --color-error-800: #991b1b;
 
-  --color-yellow-50: #fefce8;
-  --color-yellow-100: #fef9c3;
-  --color-yellow-200: #fde047;
-  --color-yellow-300: #eab308;
-  --color-yellow-500: #713f12;
+  --color-warning-50: #fefce8;
+  --color-warning-100: #fef9c3;
+  --color-warning-200: #fde047;
+  --color-warning-300: #eab308;
+  --color-warning-500: #713f12;
 
-  --color-green-50: #cee28d;
-  --color-green-100: #98ca8d;
-  --color-green-400: #63b068;
-  --color-green-700: #247e5a;
-  --color-green-900: #00444d;
+  --color-success-50: #cee28d;
+  --color-success-100: #98ca8d;
+  --color-success-400: #63b068;
+  --color-success-700: #247e5a;
+  --color-success-900: #00444d;
 }
 
 /* Typography */
