@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "쏙(Ssok) - 지능형 북마크 서비스",
   description: '필요한 정보를 "쏙" 찾아 "쏙" 정리해 드릴게요.',
   icons: {
-    icon: "/favicon.ico",
+    icon: "/ssok/favicon.ico",
   },
 };
 
