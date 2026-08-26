@@ -56,57 +56,57 @@
   @utility text-display-lg {
     font-size: 40px;
     line-height: 52px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
   @utility text-display-md {
     font-size: 36px;
     line-height: 44px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
   @utility text-display-sm {
     font-size: 32px;
     line-height: 40px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
 
   /* Headings */
   @utility text-heading-lg {
     font-size: 28px;
     line-height: 40px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
   @utility text-heading-sm {
     font-size: 24px;
     line-height: 36px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
 
   /* Body */
   @utility text-body-lg {
     font-size: 20px;
     line-height: 32px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
   @utility text-body-md {
     font-size: 18px;
     line-height: 28px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
   @utility text-body-sm {
     font-size: 16px;
     line-height: 26px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
 
   /* Caption */
   @utility text-caption-lg {
     font-size: 14px;
     line-height: 20px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
   @utility text-caption-sm {
     font-size: 12px;
     line-height: 15px;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
 }
