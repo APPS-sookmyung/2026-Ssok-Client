@@ -29,7 +29,9 @@ export default function Header({
   onProfileClick,
 }: HeaderProps) {
   return (
-    <header className="top-0 flex h-31.25 w-full items-center justify-between border-b-0.25 border-primary-500 p-8">
+    <header
+      className={`top-0 flex h-31.25 w-full items-center justify-between ${variant === "default" ? "border-b border-primary-400" : ""} p-8`}
+    >
       {/* 1. 좌측 로고 */}
       <div className="flex items-center">
         <Link href="/" className="flex items-center">
