@@ -1,11 +1,8 @@
 "use client";
 
-import {
-  ButtonHTMLAttributes,
-  ReactNode,
-  cloneElement,
-  isValidElement,
-} from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
+import PlusIcon from "@/assets/icons/common/plus.svg";
+import ArrowRightIcon from "@/assets/icons/arrow/arrow-right.svg";
 
 // 1. 모드별 허용 색상 분리
 export type DefaultButtonColor = "primary" | "secondary" | "danger" | "warning";
@@ -20,8 +17,8 @@ type BaseButtonProps = Omit<
 > & {
   children?: ReactNode;
   size?: ButtonSize;
-  leftIcon?: ReactNode;
-  rightIcon?: ReactNode;
+  leftIcon?: boolean;
+  rightIcon?: boolean;
 };
 
 type DefaultVariantProps = BaseButtonProps & {
@@ -39,9 +36,9 @@ export type ButtonProps = DefaultVariantProps | TextVariantProps;
 // 3. 외형 스타일
 const sizeStyles: Record<"default" | "text", Record<ButtonSize, string>> = {
   default: {
-    lg: "h-16 px-6 py-3.5 text-heading-sm gap-3 rounded-2xl",
-    md: "h-13 px-5 py-2.5 text-body-lg gap-2 rounded-[10px]",
-    sm: "h-10.5 px-4 py-2 text-body-sm gap-1.5 rounded-lg",
+    lg: "h-16 px-4 py-3.5 text-heading-sm gap-3 rounded-2xl",
+    md: "h-13 px-16.5 py-2.5 text-body-lg gap-2 rounded-[10px]",
+    sm: "h-10.5 px-6 py-2 text-body-sm gap-1.5 rounded-lg",
   },
   text: {
     lg: "h-auto py-3 text-heading-sm gap-1",
@@ -86,38 +83,40 @@ const colorStyles = {
   },
 };
 
+// 6. 기본 내장 아이콘
+const DefaultLeftIcon = ({ className }: { className: string }) => (
+  <img src={PlusIcon.src} alt="Left Icon" className={className} />
+);
+
+const DefaultRightIcon = ({ className }: { className: string }) => (
+  <img src={ArrowRightIcon.src} alt="Right Icon" className={className} />
+);
+
 export default function Button({
   children = "Button",
   variant = "default",
   color = "primary",
   size = "md",
-  leftIcon,
-  rightIcon,
+  leftIcon = false,
+  rightIcon = false,
   className = "",
   disabled = false,
   type = "button",
   ...props
 }: ButtonProps) {
-  const renderIcon = (icon: ReactNode) => {
-    if (!isValidElement(icon)) return null;
-    return cloneElement(icon as React.ReactElement<{ className?: string }>, {
-      className:
-        `${iconSizeStyles[variant][size]} ${(icon.props as { className?: string })?.className || ""}`.trim(),
-    });
-  };
-
-  // variant에 맞춰 올바른 colorStyle 선택
   const activeColorStyle =
     variant === "text"
       ? colorStyles.text[color as TextButtonColor]
       : colorStyles.default[color as DefaultButtonColor];
+
+  const currentIconSize = iconSizeStyles[variant][size];
 
   return (
     <button
       type={type}
       disabled={disabled}
       className={`
-        inline-flex items-center justify-center font-medium transition-all select-none
+        inline-flex items-center justify-center font-bold transition-all select-none
         disabled:cursor-not-allowed
         ${sizeStyles[variant][size]}
         ${activeColorStyle}
@@ -125,9 +124,9 @@ export default function Button({
       `}
       {...props}
     >
-      {leftIcon && renderIcon(leftIcon)}
+      {leftIcon && <DefaultLeftIcon className={currentIconSize} />}
       <span>{children}</span>
-      {rightIcon && renderIcon(rightIcon)}
+      {rightIcon && <DefaultRightIcon className={currentIconSize} />}
     </button>
   );
 }
