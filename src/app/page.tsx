@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
+import RecentSites from "@/components/library/RecentSites";
 
 export default function MainPage() {
   // '/onboarding'으로 이동
@@ -18,9 +19,21 @@ export default function MainPage() {
         </aside>
 
         {/* 우측 메인 콘텐츠 영역 */}
-        <main className="flex-1 overflow-y-auto bg-gray-50/30 p-8">
-          <div className="flex h-full items-center justify-center">
-            <p>lorem ipsum</p>
+        <main className="flex-1 overflow-y-auto bg-gray-200 p-8">
+          <div>
+            <div className="pb-20">
+              <div className="text-body-lg font-semibold text-gray-900 pb-6">
+                최근 저장 사이트 &gt;{" "}
+              </div>
+              <div>
+                <RecentSites />
+              </div>
+            </div>
+            <div>
+              <div className="text-gray-900 gap-1 pb-6 text-body-lg font-semibold">
+                라이브러리
+              </div>
+            </div>
           </div>
         </main>
       </div>
