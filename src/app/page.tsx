@@ -1,6 +1,8 @@
 import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
 import RecentSites from "@/components/library/RecentSites";
+import Folder from "@/components/library/Folder";
+import NewFolder from "@/components/library/NewFolder";
 
 export default function MainPage() {
   // '/onboarding'으로 이동
@@ -25,13 +27,17 @@ export default function MainPage() {
               <div className="text-body-lg font-semibold text-gray-900 pb-6">
                 최근 저장 사이트 &gt;{" "}
               </div>
-              <div>
+              <div className="grid grid-cols-5 items-center justify-center gap-4">
                 <RecentSites />
               </div>
             </div>
             <div>
               <div className="text-gray-900 gap-1 pb-6 text-body-lg font-semibold">
                 라이브러리
+              </div>
+              <div className="grid grid-cols-7 items-center justify-center gap-10">
+                <Folder />
+                <NewFolder />
               </div>
             </div>
           </div>
