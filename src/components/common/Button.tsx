@@ -36,13 +36,13 @@ export type ButtonProps = DefaultVariantProps | TextVariantProps;
 // 3. 외형 스타일
 const sizeStyles: Record<"default" | "text", Record<ButtonSize, string>> = {
   default: {
-    lg: "h-16 px-4 py-3.5 text-heading-sm gap-3 rounded-2xl",
-    md: "h-13 px-16.5 py-2.5 text-body-lg gap-2 rounded-[10px]",
-    sm: "h-10.5 px-6 py-2 text-body-sm gap-1.5 rounded-lg",
+    lg: "h-13 px-4 py-3 text-heading-sm gap-2.5 rounded-xl",
+    md: "h-10.5 px-12 py-2 text-body-lg gap-2 rounded-lg",
+    sm: "h-8.5 px-4 py-1.5 text-body-sm gap-1 rounded-md",
   },
   text: {
-    lg: "h-auto py-3 text-heading-sm gap-1",
-    md: "h-auto py-2 text-body-lg gap-1",
+    lg: "h-auto py-2 text-heading-sm gap-1",
+    md: "h-auto py-1.5 text-body-lg gap-1",
     sm: "h-auto py-1 text-body-md gap-1",
   },
 };
@@ -50,14 +50,14 @@ const sizeStyles: Record<"default" | "text", Record<ButtonSize, string>> = {
 // 4. 아이콘 규격
 const iconSizeStyles: Record<"default" | "text", Record<ButtonSize, string>> = {
   default: {
-    lg: "w-6 h-6",
+    lg: "w-5 h-5",
     md: "w-4 h-4",
-    sm: "w-3.5 h-3.5",
+    sm: "w-3 h-3",
   },
   text: {
-    lg: "w-5 h-5",
-    md: "w-5 h-5",
-    sm: "w-4.5 h-4.5",
+    lg: "w-4.5 h-4.5",
+    md: "w-4.5 h-4.5",
+    sm: "w-4 h-4",
   },
 };
 

@@ -30,7 +30,7 @@ export default function Header({
 }: HeaderProps) {
   return (
     <header
-      className={`top-0 flex h-31.25 w-full items-center justify-between ${variant === "default" ? "border-b border-primary-400" : ""} p-8`}
+      className={`top-0 flex h-26 w-full items-center justify-between ${variant === "default" ? "border-b border-primary-400" : ""} px-8 py-4`}
     >
       {/* 1. 좌측 로고 */}
       <div className="flex items-center">
@@ -38,7 +38,7 @@ export default function Header({
           <img
             src="/ssok/logo.svg"
             alt="Logo"
-            className="h-15.25 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
         </Link>
       </div>

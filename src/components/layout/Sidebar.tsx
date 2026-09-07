@@ -126,7 +126,7 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="flex h-full w-78 flex-col gap-2.5 border-r border-gray-300 bg-white px-8 pt-8 select-none">
+    <aside className="flex h-full w-64 flex-col gap-2 border-r border-gray-300 bg-white px-6 pt-6 select-none">
       <WorkspaceSection
         title="개인 워크 스페이스"
         type="PERSONAL"

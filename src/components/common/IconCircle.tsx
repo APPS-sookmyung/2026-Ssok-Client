@@ -2,7 +2,7 @@
 
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-export type IconCircleSize = "sm" | "lg";
+export type IconCircleSize = "sm" | "md" | "lg";
 
 interface IconCircleProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: ReactNode;
@@ -12,12 +12,14 @@ interface IconCircleProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 // 1. 고정 규격 매핑
 const fixedButtonStyles: Record<IconCircleSize, string> = {
-  sm: "h-8 w-8",
-  lg: "h-13 w-13",
+  sm: "h-6 w-6",
+  md: "h-9 w-9",
+  lg: "h-12 w-12",
 };
 
 const fixedIconStyles: Record<IconCircleSize, string> = {
-  sm: "h-6 w-6",
+  sm: "h-3.5 w-3.5",
+  md: "h-5 w-5",
   lg: "h-10 w-10",
 };
 

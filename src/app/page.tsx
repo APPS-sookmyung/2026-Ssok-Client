@@ -1,8 +1,10 @@
 import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
+
 import RecentSites from "@/components/library/RecentSites";
 import Folder from "@/components/library/Folder";
 import NewFolder from "@/components/library/NewFolder";
+import Floating from "@/components/common/Floating";
 
 export default function MainPage() {
   // '/onboarding'으로 이동
@@ -21,10 +23,10 @@ export default function MainPage() {
         </aside>
 
         {/* 우측 메인 콘텐츠 영역 */}
-        <main className="flex-1 overflow-y-auto bg-gray-200 p-8">
+        <main className="flex-1 overflow-y-auto bg-gray-100 p-6">
           <div>
-            <div className="pb-20">
-              <div className="text-body-lg font-semibold text-gray-900 pb-6">
+            <div className="pb-12">
+              <div className="text-body-lg font-semibold text-gray-900 pb-4">
                 최근 저장 사이트 &gt;{" "}
               </div>
               <div className="grid grid-cols-5 items-center justify-center gap-4">
@@ -32,13 +34,17 @@ export default function MainPage() {
               </div>
             </div>
             <div>
-              <div className="text-gray-900 gap-1 pb-6 text-body-lg font-semibold">
+              <div className="text-gray-900 gap-1 pb-4 text-body-lg font-semibold">
                 라이브러리
               </div>
-              <div className="grid grid-cols-7 items-center justify-center gap-10">
+              <div className="grid grid-cols-7 items-center justify-center gap-6">
                 <Folder />
                 <NewFolder />
               </div>
+            </div>
+
+            <div className="fixed bottom-16 right-6">
+              <Floating />
             </div>
           </div>
         </main>
