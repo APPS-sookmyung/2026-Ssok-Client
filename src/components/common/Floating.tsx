@@ -12,13 +12,14 @@ export default function Floating() {
         icon={LinkIcon}
         altText="Link Icon"
         size="lg"
-        iconColor="stroke-white"
+        iconColor="text-white"
         className="hover:bg-primary-500 active:bg-primary-600"
       />
       <IconCircle
         icon={SsokIcon}
         altText="Ssok Icon"
         size="lg"
+        iconColor="text-white"
         className="hover:bg-primary-500 active:bg-primary-600"
       />
     </div>
