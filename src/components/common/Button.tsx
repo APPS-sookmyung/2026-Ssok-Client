@@ -85,11 +85,19 @@ const colorStyles = {
 
 // 6. 기본 내장 아이콘
 const DefaultLeftIcon = ({ className }: { className: string }) => (
-  <img src={PlusIcon.src} alt="Left Icon" className={className} />
+  <span
+    className={`flex items-center justify-center shrink-0 pointer-events-none [&>svg]:w-full [&>svg]:h-full [&>svg]:block ${className}`}
+  >
+    <PlusIcon />
+  </span>
 );
 
 const DefaultRightIcon = ({ className }: { className: string }) => (
-  <img src={ArrowRightIcon.src} alt="Right Icon" className={className} />
+  <span
+    className={`flex items-center justify-center shrink-0 pointer-events-none [&>svg]:w-full [&>svg]:h-full [&>svg]:block ${className}`}
+  >
+    <ArrowRightIcon />
+  </span>
 );
 
 export default function Button({
