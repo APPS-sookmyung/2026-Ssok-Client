@@ -75,28 +75,20 @@ export default function Header({
               팀원 초대
             </Button>
 
-            <IconCircle
-              icon={
-                <img
-                  src={AlarmIcon.src}
-                  alt="Alarm"
-                  className="w-full h-full object-contain"
-                />
-              }
-              altText="Alarm"
-              onClick={onAlarmClick}
-            />
-            <IconCircle
-              icon={
-                <img
-                  src={MyIcon.src}
-                  alt="내 프로필"
-                  className="w-full h-full object-contain"
-                />
-              }
-              altText="내 프로필"
-              onClick={onProfileClick}
-            />
+            <div className="flex items-center align-middle gap-3">
+              <IconCircle
+                icon={AlarmIcon}
+                altText="Alarm"
+                onClick={onAlarmClick}
+                size="lg"
+              />
+              <IconCircle
+                icon={MyIcon}
+                altText="내 프로필"
+                onClick={onProfileClick}
+                size="lg"
+              />
+            </div>
           </>
         )}
       </div>

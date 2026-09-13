@@ -27,9 +27,6 @@ export default function SpaceButton({
   ...props
 }: SpaceButtonProps) {
   const [editValue, setEditValue] = useState(spaceName);
-  const iconSrc =
-    variant === "User" ? UserIcon.src || UserIcon : TeamIcon.src || TeamIcon;
-
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     e.stopPropagation();
     if (e.key === "Enter") {
@@ -54,11 +51,11 @@ export default function SpaceButton({
       `}
       {...props}
     >
-      <img
-        src={iconSrc}
-        alt={variant === "User" ? "개인 스페이스" : "팀 스페이스"}
-        className="h-6 w-6 shrink-0 object-contain"
-      />
+      {variant === "User" ? (
+        <UserIcon className="h-6 w-6 shrink-0 object-contain" />
+      ) : (
+        <TeamIcon className="h-6 w-6 shrink-0 object-contain" />
+      )}
 
       {/* 수정 모드 분기 처리 */}
       {isEditing ? (
