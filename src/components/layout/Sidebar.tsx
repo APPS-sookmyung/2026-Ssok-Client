@@ -41,15 +41,11 @@ function WorkspaceSection({
           onClick={() => setIsOpen((prev) => !prev)}
           className="flex items-center gap-2 hover:text-gray-900 transition-colors"
         >
-          <img
-            src={
-              isOpen
-                ? ArrowUpIcon.src || ArrowUpIcon
-                : ArrowDownIcon.src || ArrowDownIcon
-            }
-            alt={isOpen ? "접기" : "펼치기"}
-            className="h-4 w-4 object-contain"
-          />
+          {isOpen ? (
+            <ArrowUpIcon className="h-4 w-4 object-contain" />
+          ) : (
+            <ArrowDownIcon className="h-4 w-4 object-contain" />
+          )}
           <span className="text-body-sm font-semibold tracking-tight">
             {title}
           </span>
@@ -62,13 +58,7 @@ function WorkspaceSection({
             setIsCreating(true);
           }}
           altText="스페이스 추가"
-          icon={
-            <img
-              src={PlusIcon.src || PlusIcon}
-              alt="추가"
-              className="h-3.5 w-3.5 object-contain"
-            />
-          }
+          icon={PlusIcon}
         />
       </div>
 

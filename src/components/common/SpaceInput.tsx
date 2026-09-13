@@ -19,9 +19,6 @@ export default function SpaceInput({
   onCancel,
 }: SpaceInputProps) {
   const [name, setName] = useState("");
-  const iconSrc =
-    variant === "User" ? UserIcon.src || UserIcon : TeamIcon.src || TeamIcon;
-
   const handleSubmit = () => {
     if (name.trim()) {
       onSubmit(name.trim());
@@ -31,13 +28,11 @@ export default function SpaceInput({
   };
 
   return (
-    <div className="flex h-12 w-full items-center gap-3 rounded-xl px-3 transition-colors">
+    <div className="flex w-full h-12 items-center gap-3 rounded-xl px-3 transition-colors">
       {/* SpaceButton과 동일한 아이콘 규격 */}
-      <img
-        src={iconSrc}
-        alt={variant === "User" ? "개인 스페이스" : "팀 스페이스"}
-        className="h-6 w-6 shrink-0 object-contain"
-      />
+      <div className="shrink-0 h-6 w-6">
+        {variant === "User" ? <UserIcon /> : <TeamIcon />}
+      </div>
 
       {/* 인라인 텍스트 인풋 */}
       <input

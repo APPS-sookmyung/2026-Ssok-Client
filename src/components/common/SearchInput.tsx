@@ -92,16 +92,17 @@ export default function SearchInput({
         {...props}
       />
 
+      {/* 아이콘 버튼 영역*/}
       <button
         type="button"
         disabled={disabled}
         onClick={handleSearchSubmit}
-        className="shrink-0 ml-2 cursor-pointer disabled:cursor-not-allowed"
+        aria-label="검색"
+        className="shrink-0 ml-2 inline-flex items-center justify-center p-0 bg-transparent border-0 cursor-pointer disabled:cursor-not-allowed"
       >
-        <img
-          src={SearchIcon.src || SearchIcon}
-          alt="Search"
-          className={iconSizeClass}
+        <SearchIcon
+          className={`block shrink-0 ${iconSizeClass}`}
+          aria-hidden="true"
         />
       </button>
     </div>
