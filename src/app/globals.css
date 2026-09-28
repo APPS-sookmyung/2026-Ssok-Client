@@ -107,3 +107,12 @@
   line-height: 14px;
   letter-spacing: -0.02em;
 }
+
+/* 스크롤은 되지만 스크롤바는 숨김 */
+@utility scrollbar-hide {
+  scrollbar-width: none; /* Firefox, 최신 Chrome */
+  -ms-overflow-style: none; /* 구형 Edge */
+  &::-webkit-scrollbar {
+    display: none; /* Safari, 구형 Chrome */
+  }
+}
