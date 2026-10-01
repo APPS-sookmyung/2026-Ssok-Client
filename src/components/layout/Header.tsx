@@ -8,6 +8,10 @@ import ProfileDropdown, {
   ProfileMenuLabel,
 } from "@/components/layout/ProfileDropdown";
 import AlarmDropdown, { AlarmItem } from "@/components/layout/AlarmDropdown";
+import InviteModal, {
+  InviteMember,
+  MemberRole,
+} from "@/components/layout/InviteModal";
 import { useCallback, useRef, useState } from "react";
 import { useClickOutside } from "@/hooks/useClickOutside";
 
@@ -59,6 +63,16 @@ const MOCK_ALARMS: AlarmItem[] = [
   },
 ];
 
+// TODO: API 연동 후 제거
+const MOCK_MEMBERS: InviteMember[] = [
+  { id: 1, name: "김지영", role: "편집자" },
+  { id: 2, name: "김지영", role: "편집자" },
+  { id: 3, name: "김서경", role: "편집자" },
+  { id: 4, name: "박지훈", role: "편집자" },
+  { id: 5, name: "최진희", role: "편집자" },
+  { id: 6, name: "이재훈", role: "편집자" },
+];
+
 type OpenMenu = "alarm" | "profile" | null;
 
 export default function Header({
@@ -74,6 +88,22 @@ export default function Header({
 }: HeaderProps) {
   const [openMenu, setOpenMenu] = useState<OpenMenu>(null);
   const actionsRef = useRef<HTMLDivElement>(null);
+  const [isInviteOpen, setIsInviteOpen] = useState(false);
+  // TODO: API 연동 후 서버 데이터로 교체
+  const [members, setMembers] = useState<InviteMember[]>(MOCK_MEMBERS);
+
+  const handleInvite = (email: string) => {
+    // TODO: 초대 메일 발송 API 연동
+    setMembers((prev) => [
+      ...prev,
+      { id: `${email}-${Date.now()}`, name: email, role: "편집자" },
+    ]);
+  };
+
+  const handleRoleChange = (id: InviteMember["id"], role: MemberRole) => {
+    // TODO: 권한 변경 API 연동
+    setMembers((prev) => prev.map((m) => (m.id === id ? { ...m, role } : m)));
+  };
 
   const closeMenu = useCallback(() => setOpenMenu(null), []);
   useClickOutside(actionsRef, closeMenu, openMenu !== null);
@@ -122,7 +152,11 @@ export default function Header({
               variant="default"
               color="secondary"
               size="sm"
-              onClick={onInvite}
+              onClick={() => {
+                closeMenu();
+                setIsInviteOpen(true);
+                onInvite?.();
+              }}
               leftIcon
             >
               팀원 초대
@@ -172,6 +206,15 @@ export default function Header({
           </>
         )}
       </div>
+
+      {isInviteOpen && (
+        <InviteModal
+          members={members}
+          onInvite={handleInvite}
+          onRoleChange={handleRoleChange}
+          onClose={() => setIsInviteOpen(false)}
+        />
+      )}
     </header>
   );
 }
