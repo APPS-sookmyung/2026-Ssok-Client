@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { SpaceItem, WorkspaceType } from "@/types/workspace";
-import { MOCK_SPACE_RESPONSE } from "@/constants/mockSpaces";
+import { addSpace, useSpaces } from "@/store/useSpaceStore";
 import IconCircle from "@/components/common/IconCircle";
 import SpaceButton from "@/components/common/SpaceButton";
 import SpaceInput from "@/components/common/SpaceInput";
@@ -98,20 +98,14 @@ function WorkspaceSection({
 }
 
 export default function Sidebar() {
-  const [spaces, setSpaces] = useState<SpaceItem[]>(MOCK_SPACE_RESPONSE.data);
+  const spaces = useSpaces();
   const [selectedSpaceId, setSelectedSpaceId] = useState<number | null>(1);
 
   const personalSpaces = spaces.filter((s) => s.type === "PERSONAL");
   const teamSpaces = spaces.filter((s) => s.type === "TEAM");
 
   const handleAddSpace = (name: string, type: WorkspaceType) => {
-    const newSpace: SpaceItem = {
-      spaceId: Date.now(),
-      name,
-      type,
-      bookmarkCount: 0,
-    };
-    setSpaces((prev) => [...prev, newSpace]);
+    const newSpace = addSpace(name, type);
     setSelectedSpaceId(newSpace.spaceId);
   };
 
