@@ -102,13 +102,13 @@ export default function LinkUploadDropdown({
         onChange={(e) => setUrl(e.target.value)}
         placeholder="링크 복사하기..."
         aria-label="저장할 링크"
-        className="mt-4 h-8 w-full rounded-lg bg-gray-100 px-4 text-caption-lg text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
+        className="mt-4 h-8 w-full rounded-lg bg-gray-100 px-4 text-body-sm font-semibold text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-primary-400"
       />
 
       {/* 저장할 스페이스 */}
       <span
         id="link-upload-space-label"
-        className="mt-5 text-caption-sm font-medium text-gray-700"
+        className="mt-5 text-caption-lg font-semibold text-gray-700"
       >
         저장할 스페이스
       </span>
@@ -116,7 +116,7 @@ export default function LinkUploadDropdown({
       <button
         type="button"
         aria-labelledby="link-upload-space-label"
-        className="mt-2 flex h-9.5 w-full items-center justify-between rounded-lg bg-gray-200 pl-3 pr-3 text-left text-caption-lg font-semibold text-gray-900 focus:outline-none focus:ring-1 focus:ring-primary-400"
+        className="mt-2 flex h-9.5 w-full items-center justify-between rounded-lg bg-gray-200 pl-3 pr-3 text-left text-body-sm font-semibold text-gray-900 focus:outline-none focus:ring-1 focus:ring-primary-400"
       >
         <span className="truncate">{selectedSpace?.name}</span>
         <ArrowDownIcon className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -125,7 +125,7 @@ export default function LinkUploadDropdown({
       {/* 라이브러리 */}
       <label
         htmlFor="link-upload-library"
-        className="mt-5 text-caption-sm font-medium text-gray-700"
+        className="mt-5 text-caption-lg font-semibold text-gray-700"
       >
         라이브러리
       </label>
@@ -137,7 +137,7 @@ export default function LinkUploadDropdown({
           onChange={(e) => setLibraryQuery(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
           placeholder="라이브러리를 검색해보세요"
-          className="min-w-0 flex-1 bg-transparent text-caption-lg text-gray-900 placeholder:text-gray-500 focus:outline-none"
+          className="min-w-0 flex-1 bg-transparent text-body-sm font-semibold text-gray-900 placeholder:text-gray-500 focus:outline-none"
         />
         <SearchIcon className="h-5 w-5 shrink-0" aria-hidden="true" />
       </div>
@@ -151,7 +151,7 @@ export default function LinkUploadDropdown({
                 type="button"
                 aria-pressed={isSelected}
                 onClick={() => setSelectedLibrary(isSelected ? null : name)}
-                className={`h-6.5 rounded-full border bg-white px-2 text-caption-lg font-semibold ${isSelected ? "border-primary-400 text-primary-400" : "border-gray-300 text-gray-900"}`}
+                className={`h-6.5 rounded-full border bg-white px-2 text-body-sm font-bold ${isSelected ? "border-primary-400 text-primary-400" : "border-gray-300 text-gray-900"}`}
               >
                 {name}
               </button>
@@ -163,7 +163,7 @@ export default function LinkUploadDropdown({
       {/* 저장 */}
       <button
         type="submit"
-        className="mt-4 h-9.5 w-full rounded-lg bg-primary-400 text-body-md font-semibold text-primary-50 transition-colors hover:bg-primary-800 active:bg-primary-700"
+        className="mt-4 h-9.5 w-full rounded-lg bg-primary-400 text-body-lg font-bold text-primary-50 transition-colors hover:bg-primary-800 active:bg-primary-700"
       >
         저장
       </button>
