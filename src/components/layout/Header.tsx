@@ -113,7 +113,7 @@ export default function Header({
 
   return (
     <header
-      className={`top-0 flex h-26 w-full items-center justify-between ${variant === "default" ? "border-b border-primary-400" : ""} px-8 py-4`}
+      className={`top-0 flex h-26 w-full items-center justify-between ${variant === "default" ? "border-b border-primary-400" : "border-b border-gray-200"} px-8 py-4`}
     >
       {/* 1. 좌측 로고 */}
       <div className="flex items-center">
@@ -141,10 +141,10 @@ export default function Header({
           <Button
             variant="default"
             color="primary"
-            size="md"
+            size="sm"
             onClick={onInstall}
           >
-            설치하러 가기
+            로그인하고 설치하기
           </Button>
         ) : (
           <>
