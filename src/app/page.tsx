@@ -4,7 +4,7 @@ import Sidebar from "@/components/layout/Sidebar";
 import RecentSites from "@/components/library/RecentSites";
 import Folder from "@/components/library/Folder";
 import NewFolder from "@/components/library/NewFolder";
-import Floating from "@/components/common/Floating";
+import SsokChat from "@/components/chat/SsokChat";
 
 export default function MainPage() {
   // '/onboarding'으로 이동
@@ -16,7 +16,7 @@ export default function MainPage() {
       <Header variant="default" />
 
       {/* 2. 하단 본문 */}
-      <div className="flex flex-1 overflow-hidden">
+      <div className="relative flex flex-1 overflow-hidden">
         {/* 좌측 사이드바 영역 */}
         <aside className="shrink-0 border-r border-gray-100 bg-white overflow-y-auto">
           <Sidebar />
@@ -42,12 +42,11 @@ export default function MainPage() {
                 <NewFolder />
               </div>
             </div>
-
-            <div className="fixed bottom-16 right-6">
-              <Floating />
-            </div>
           </div>
         </main>
+
+        {/* 플로팅 버튼 + 쏙 AI 채팅 패널 */}
+        <SsokChat />
       </div>
     </div>
   );

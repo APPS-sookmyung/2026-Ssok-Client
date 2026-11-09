@@ -8,7 +8,15 @@ import LinkUploadDropdown from "@/components/library/LinkUploadDropdown";
 import LinkIcon from "@/assets/icons/common/link.svg";
 import SsokIcon from "@/assets/icons/common/ssok.svg";
 
-export default function Floating() {
+interface FloatingProps {
+  isChatOpen?: boolean;
+  onChatToggle?: () => void;
+}
+
+export default function Floating({
+  isChatOpen = false,
+  onChatToggle,
+}: FloatingProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLinkUploadOpen, setIsLinkUploadOpen] = useState(false);
 
@@ -32,10 +40,15 @@ export default function Floating() {
         />
         <IconCircle
           icon={SsokIcon}
-          altText="Ssok Icon"
+          altText={isChatOpen ? "쏙 AI 검색 닫기" : "쏙 AI 검색 열기"}
+          aria-pressed={isChatOpen}
+          onClick={() => {
+            closeLinkUpload();
+            onChatToggle?.();
+          }}
           size="lg"
           iconColor="text-white"
-          className="hover:bg-primary-500 active:bg-primary-600"
+          className={`hover:bg-primary-500 active:bg-primary-600 ${isChatOpen ? "bg-primary-600" : ""}`}
         />
       </div>
     </div>
